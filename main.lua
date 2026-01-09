@@ -151,6 +151,7 @@ include("scripts.graverobber")
 include("scripts.splashyLongLegs")
 include("scripts.fireGrimace")
 include("scripts.bloodworm")
+include("scripts.canary")
 include("scripts.corpseEaters")
 include("scripts.dumplings")
 include("scripts.fracture")
@@ -163,6 +164,7 @@ include("scripts.barfy")
 include("scripts.strifers")
 include("scripts.nightwatch")
 include("scripts.vessel")
+include("scripts.coils")
 include("scripts.screamer")
 include("scripts.redTNT")
 include("scripts.palevessel")
@@ -196,6 +198,15 @@ end)
 --[[--------------------------------------------------------
     Blacklists
 --]]--------------------------------------------------------
+
+local coil_blacklist = {
+	{EntityType.ENTITY_LUMP, -1, -1},
+	{RestoredMonsterPack.ENTITY_INFO.COIL.ID, RestoredMonsterPack.ENTITY_INFO.COIL.VARIANT, -1},
+	{RestoredMonsterPack.ENTITY_INFO.RED_TNT.ID, RestoredMonsterPack.ENTITY_INFO.RED_TNT.VARIANT, -1},
+	{EntityType.ENTITY_GRUB, 100, 1}, -- Corpse eater body
+	{EntityType.ENTITY_EVIS, 10, -1}, -- Evis cord
+	{EntityType.ENTITY_NEEDLE, -1, -1},
+}
 
 local necromancer_blacklist = {
 	{EntityType.ENTITY_BONY, -1, mod.ENTITY_INFO.NECROMANCER.VARIANT}, -- Bonys spawned by Necromancers
@@ -240,7 +251,7 @@ local corpse_eater_blacklist = {
 -- Add / remove blacklist entry
 function mod:AMLblacklistentry(blacklist, Type, Variant, SubType, operation)
 	-- Error checking
-	if blacklist ~= "Necromancer" and blacklist ~= "Corpse Eater" then
+	if blacklist ~= "Coil" and blacklist ~= "Necromancer" and blacklist ~= "Corpse Eater" then
 		print("[CMP] Error adding / removing blacklist entry:\n   Incorrect blacklist: " .. blacklist)
 	end
 	if operation ~= "add" and operation ~= "remove" then
@@ -250,7 +261,9 @@ function mod:AMLblacklistentry(blacklist, Type, Variant, SubType, operation)
 
 	-- Get blacklist
 	local checkList = {}
-	if blacklist == "Necromancer" then
+	if blacklist == "Coil" then
+		checkList = coil_blacklist
+	elseif blacklist == "Necromancer" then
 		checkList = necromancer_blacklist
 	elseif blacklist == "Corpse Eater" then
 		checkList = corpse_eater_blacklist
@@ -284,13 +297,15 @@ end
 
 -- Check if the entity is in the blacklist or not
 function mod:inAMLblacklist(blacklist, checkType, checkVariant, checkSubType)
-	if blacklist ~= "Necromancer" and blacklist ~= "Corpse Eater" then
+	if blacklist ~= "Coil" and blacklist ~= "Necromancer" and blacklist ~= "Corpse Eater" then
 		print("[CMP] Error checking blacklist:\n   Incorrect blacklist: " .. blacklist)
 		return
 	end
 
 	local checkList = {}
-	if blacklist == "Necromancer" then
+	if blacklist == "Coil" then
+		checkList = coil_blacklist
+	elseif blacklist == "Necromancer" then
 		checkList = necromancer_blacklist
 	elseif blacklist == "Corpse Eater" then
 		checkList = corpse_eater_blacklist
