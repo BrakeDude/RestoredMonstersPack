@@ -40,7 +40,7 @@ function mod:GetCoils()
         local coil_table = {}
 
         for _,v in pairs(Isaac.GetRoomEntities()) do
-            if v:IsEnemy() and v.Type == EntityType.ENTITY_CUTMONSTERS and v.Variant == CutMonsterVariants.COIL then
+            if v:IsEnemy() and v.Type == mod.ENTITY_INFO.COIL.ID and v.Variant == mod.ENTITY_INFO.COIL.VARIANT then
 				table.insert(coil_table, v.Position)
 			end
         end
@@ -50,7 +50,7 @@ function mod:GetCoils()
     else
         if CoilRoomRecord[room_index] ~= nil then
             for _,v in pairs(CoilRoomRecord[room_index]) do
-                Isaac.Spawn(EntityType.ENTITY_CUTMONSTERS, CutMonsterVariants.COIL, 0, v, Vector.Zero, nil)
+                Isaac.Spawn(mod.ENTITY_INFO.COIL.ID, mod.ENTITY_INFO.COIL.VARIANT, 0, v, Vector.Zero, nil)
             end
         end
     end
@@ -66,7 +66,7 @@ mod:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, mod.CoilClearRecord)
 
 
 function mod:CoilInit(npc)
-    if npc.Variant == CutMonsterVariants.COIL then
+    if npc.Variant == mod.ENTITY_INFO.COIL.VARIANT then
         npc:GetData()["StartPos"] = npc.Position -- Get anchor position
         npc:GetData()["CoilID"] = math.random(100)
         npc:GetData()["Lasers"] = {}
@@ -79,10 +79,10 @@ function mod:CoilInit(npc)
 		end
     end
 end
-mod:AddCallback(ModCallbacks.MC_POST_NPC_INIT, mod.CoilInit, EntityType.ENTITY_CUTMONSTERS)
+mod:AddCallback(ModCallbacks.MC_POST_NPC_INIT, mod.CoilInit, mod.ENTITY_INFO.COIL.ID)
 
 function mod:CoilUpdate(npc)
-    if npc.Variant == CutMonsterVariants.COIL then
+    if npc.Variant == mod.ENTITY_INFO.COIL.VARIANT then
         npc.Position = npc:GetData()["StartPos"] -- anchor to position
         npc:GetSprite():Play("Idle")
 
@@ -114,11 +114,11 @@ function mod:CoilUpdate(npc)
         end
     end
 end
-mod:AddCallback(ModCallbacks.MC_NPC_UPDATE, mod.CoilUpdate, EntityType.ENTITY_CUTMONSTERS)
+mod:AddCallback(ModCallbacks.MC_NPC_UPDATE, mod.CoilUpdate, mod.ENTITY_INFO.COIL.ID)
 
 function mod:CoilDamage(entity, amount, dmg_flags)
-    if entity.Variant == CutMonsterVariants.COIL then
+    if entity.Variant == mod.ENTITY_INFO.COIL.VARIANT then
         return false
     end
 end
-mod:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG, mod.CoilDamage, EntityType.ENTITY_CUTMONSTERS)
+mod:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG, mod.CoilDamage, mod.ENTITY_INFO.COIL.ID)

@@ -17,8 +17,8 @@ local States = {
 	Attacking = 2
 }
 
-local canaryvar = Isaac.GetEntityVariantByName("​Canary")
-local foreigar = Isaac.GetEntityVariantByName("​Foreigner")
+local canaryvar = mod.ENTITY_INFO.CANARY.VARIANT
+local foreigar = mod.ENTITY_INFO.FOREIGNER.VARIANT
 
 
 function mod:canaryInit(entity)
@@ -53,7 +53,7 @@ function mod:canaryInit(entity)
 		sprite:LoadGraphics()
 	end
 end
-mod:AddCallback(ModCallbacks.MC_POST_NPC_INIT, mod.canaryInit, EntityType.ENTITY_CANARY)
+mod:AddCallback(ModCallbacks.MC_POST_NPC_INIT, mod.canaryInit, mod.ENTITY_INFO.CANARY.ID)
 
 function mod:canaryUpdate(entity)
 	local sprite = entity:GetSprite()
@@ -313,7 +313,7 @@ function mod:canaryUpdate(entity)
 		end
 	end
 end
-mod:AddCallback(ModCallbacks.MC_NPC_UPDATE, mod.canaryUpdate, EntityType.ENTITY_CANARY)
+mod:AddCallback(ModCallbacks.MC_NPC_UPDATE, mod.canaryUpdate, mod.ENTITY_INFO.CANARY.ID)
 
 
 
@@ -331,7 +331,7 @@ mod:AddCallback(ModCallbacks.MC_POST_EFFECT_UPDATE, mod.foreignerLaserImpact, Ef
 
 -- Foreigner laser shouldn't hurt certain entities, should ignite ignitable enemies
 function mod:foreignerLaserDMG(target, damageAmount, damageFlags, damageSource, damageCountdownFrames)
-	if (damageSource.Entity and damageSource.Entity.Type == EntityType.ENTITY_CANARY and damageSource.Entity.Variant == foreigar and damageSource.Entity:GetData().brim) then
+	if (damageSource.Entity and damageSource.Entity.Type == mod.ENTITY_INFO.FOREIGNER.ID and damageSource.Entity.Variant == foreigar and damageSource.Entity:GetData().brim) then
 		if ((target.Type == EntityType.ENTITY_CLOTTY and (target.Variant == 0 or target.Variant == 3)) or (target.Type == EntityType.ENTITY_HOPPER and target.Variant == 0) or target.Type == EntityType.ENTITY_FIREPLACE
 		or target.Type == EntityType.ENTITY_FLAMINGHOPPER or (target.Type == EntityType.ENTITY_ROCK_SPIDER and target.Variant ~= 1) or target.Type == EntityType.ENTITY_GYRO) then
 			if (target.Type == EntityType.ENTITY_CLOTTY or target.Type == EntityType.ENTITY_HOPPER or target.Type == EntityType.ENTITY_ROCK_SPIDER or target.Type == EntityType.ENTITY_GYRO) and target.Variant == 0 then
