@@ -1,4 +1,4 @@
-local mod = RestoredMonsterPack
+local mod = RestoredMonsterPackJF
 local game = Game()
 
 local Settings = {
@@ -24,7 +24,7 @@ local checkvar = Isaac.GetEntityVariantByName("​Vessel (Antibirth)")
 
 function mod:vesselCheckForLegOrWhateverTheFuckDSSSays(type, var, stype)
     if type == mod.ENTITY_INFO.VESSEL.ID then
-        if RestoredMonsterPack.DSSavedata.vesselType == 2 then
+        if RestoredMonsterPackJF.DSSavedata.vesselType == 2 then
             checkvar = Isaac.GetEntityVariantByName("​Vessel (Antibirth)")
         else
             checkvar = Isaac.GetEntityVariantByName("Vessel (RM)")

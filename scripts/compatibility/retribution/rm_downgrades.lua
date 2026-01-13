@@ -35,6 +35,9 @@ local data = {
     {c.RagCreep,          vc.WallCreep},
     {vc.MazeRoamer,          c.Strifer},
     {c.Strifer,          vc.Cyclopia},
+    {c.Coil,            vc.Pustule},
+    {c.Canary,            vc.Cyclopia},
+    {c.Foreigner,            c.Canary}
 }
 
 for _, dataset in pairs(data) do

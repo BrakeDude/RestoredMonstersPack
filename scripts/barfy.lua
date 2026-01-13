@@ -1,4 +1,4 @@
-local mod = RestoredMonsterPack
+local mod = RestoredMonsterPackJF
 local game = Game()
 
 local BARFY = mod.ENTITY_INFO.BARFY

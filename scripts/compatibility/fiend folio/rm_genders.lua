@@ -1,4 +1,4 @@
-local mod = RestoredMonsterPack
+local mod = RestoredMonsterPackJF
 
 if FiendFolio then
 
@@ -16,7 +16,7 @@ function mod:SpecialEnt(name)
 end
 
 
-RestoredMonsterPack.Nonmale = {
+RestoredMonsterPackJF.Nonmale = {
 	{ID = mod:SpecialEnt("Splashy Long Legs"), Affliction = "Woman"},
 	{ID = mod:SpecialEnt("Sticky Long Legs"), Affliction = "Woman"},
 	{ID = mod:SpecialEnt("Tainted Dumpling"), Affliction = "Woman"},
@@ -29,9 +29,10 @@ RestoredMonsterPack.Nonmale = {
 	{ID = mod:SpecialEnt("Grave Robber"), Affliction = "Woman"},
 	{ID = mod:SpecialEnt("​Strifer"), Affliction = "Woman"},
 	{ID = mod:SpecialEnt("Vessel (Antibirth)"), Affliction = "Woman"},
+	{ID = mod:SpecialEnt("​​Foreigner"), Affliction = "Woman"},
 }
 
-RestoredMonsterPack.LGBTQIA = {
+RestoredMonsterPackJF.LGBTQIA = {
 	{ID = mod:SpecialEnt("Dumpling"), Affliction = "Non-Binary"},
 	{ID = mod:SpecialEnt("Mortling"), Affliction = "Non-Binary"},
 	{ID = mod:SpecialEnt("Corpse Eater"), Affliction = "Demigirl"},
@@ -39,11 +40,13 @@ RestoredMonsterPack.LGBTQIA = {
 	{ID = mod:SpecialEnt("Sporeling"), Affliction = "3rd Gender"},
 	{ID = mod:SpecialEnt("Chubby Bunny"), Affliction = "3rd Gender"},
 	{ID = mod:SpecialEnt("Beard Bat"), Affliction = "3rd Gender"},
+	{ID = mod:SpecialEnt("​Canary"), Affliction = "Man"},
+	{ID = mod:SpecialEnt("​Coil"), Affliction = "Woom"},
 }
 
 function mod.MixFiendFolioStuff()
-	mod:MixTables(FiendFolio.Nonmale, RestoredMonsterPack.Nonmale)
-	mod:MixTables(FiendFolio.LGBTQIA, RestoredMonsterPack.LGBTQIA)
+	mod:MixTables(FiendFolio.Nonmale, RestoredMonsterPackJF.Nonmale)
+	mod:MixTables(FiendFolio.LGBTQIA, RestoredMonsterPackJF.LGBTQIA)
 	mod.fiendfolioTablesMixed = true
 end
 

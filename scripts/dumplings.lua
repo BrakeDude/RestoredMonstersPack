@@ -1,4 +1,4 @@
-local mod = RestoredMonsterPack
+local mod = RestoredMonsterPackJF
 local game = Game()
 
 
@@ -13,7 +13,7 @@ local function fart(npc)
 		visible = true
 
 	-- Skinling
-	elseif npc.Variant == RestoredMonsterPack.ENTITY_INFO.SKINLING.VARIANT then
+	elseif npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.SKINLING.VARIANT then
 		Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.FART, 0, npc.Position, Vector.Zero, npc) -- green fart
 
 		local partition = EntityPartition.PLAYER
@@ -42,7 +42,7 @@ local function fart(npc)
 		end
 
 	-- Scab
-	elseif npc.Variant == RestoredMonsterPack.ENTITY_INFO.SCAB.VARIANT then
+	elseif npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.SCAB.VARIANT then
 		Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.FART, 1, npc.Position, Vector.Zero, npc) -- red fart
 
 		local params = ProjectileParams()
@@ -50,13 +50,13 @@ local function fart(npc)
 		npc:FireProjectiles(npc.Position, Vector(10, 6), 9, params)
 
 	-- Scorchling
-	elseif npc.Variant == RestoredMonsterPack.ENTITY_INFO.SCORCHLING.VARIANT then
+	elseif npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.SCORCHLING.VARIANT then
 		visible = true
 		local spawned_fire = Isaac.Spawn(EntityType.ENTITY_FIREPLACE, 10, 0, npc.Position, Vector(0,0), npc)
         spawned_fire.HitPoints = 3.0
 
 	-- Mortling
-	elseif npc.Variant == RestoredMonsterPack.ENTITY_INFO.MORTLING.VARIANT then
+	elseif npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.MORTLING.VARIANT then
 		Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.FART, 0, npc.Position, Vector.Zero, npc) -- green fart
 
 		local rng = RNG()
@@ -116,7 +116,7 @@ local function fart(npc)
         spawned_cloud:ToEffect():SetTimeout(600)
 
 	-- Tainted Dumpling
-	elseif npc.Variant == RestoredMonsterPack.ENTITY_INFO.TAINTED_DUMPLING.VARIANT then
+	elseif npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.TAINTED_DUMPLING.VARIANT then
 		Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.FART, 0, npc.Position, Vector.Zero, npc) -- green fart
 
         local params = ProjectileParams()
@@ -127,14 +127,14 @@ local function fart(npc)
         npc:FireBossProjectiles(1, player_position, 0, poop_params)
         npc:FireBossProjectiles(2, Vector(0,0), 0, ProjectileParams())
 
-	elseif npc.Variant == RestoredMonsterPack.ENTITY_INFO.GILDED_DUMPLING.VARIANT then
+	elseif npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.GILDED_DUMPLING.VARIANT then
 	    local rng = npc:GetDropRNG()
 
 		visible = true
 	    for var=0,3 do
             Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.COIN_PARTICLE, 0, npc.Position, Vector(rng:RandomInt(6)-3,rng:RandomInt(6)-3), npc)
         end
-	elseif FFGRACE and npc.Variant == RestoredMonsterPack.ENTITY_INFO.SPORELING.VARIANT then
+	elseif FFGRACE and npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.SPORELING.VARIANT then
 		FFGRACE:MakeSporeExplosion(npc.Position, npc.SpawnerEntity)
 	end
 
@@ -163,7 +163,7 @@ function mod:dumplingUpdate(npc)
 	if npc.State == NpcState.STATE_IDLE then -- if idling
 		sprite:Play("Idle")
 
-		if FFGRACE and npc.Variant == RestoredMonsterPack.ENTITY_INFO.SPORELING.VARIANT and not feared then --redefine target for sporeling
+		if FFGRACE and npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.SPORELING.VARIANT and not feared then --redefine target for sporeling
 			local closestDistance, closestTarget
 			for _, enemy in ipairs(Isaac.GetRoomEntities()) do
 				if mod:EntityInList(enemy, mod.sporeTransformable) then
@@ -194,7 +194,7 @@ function mod:dumplingUpdate(npc)
 			add_velocity_and_flip(npc, Vector.FromAngle(player_angle + 180) * Vector(rng:RandomInt(3)+3, rng:RandomInt(3)+3))
 			sprite:Play("Move")
 
-		elseif (npc.Variant == mod.ENTITY_INFO.DUMPLING.VARIANT or npc.Variant == mod.ENTITY_INFO.SKINLING.VARIANT or npc.Variant == mod.ENTITY_INFO.SCORCHLING.VARIANT or npc.Variant == RestoredMonsterPack.ENTITY_INFO.GILDED_DUMPLING.VARIANT or npc.Variant == RestoredMonsterPack.ENTITY_INFO.SPORELING.VARIANT) and rng:RandomInt(20) == 1 and not feared then -- move toward player slow
+		elseif (npc.Variant == mod.ENTITY_INFO.DUMPLING.VARIANT or npc.Variant == mod.ENTITY_INFO.SKINLING.VARIANT or npc.Variant == mod.ENTITY_INFO.SCORCHLING.VARIANT or npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.GILDED_DUMPLING.VARIANT or npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.SPORELING.VARIANT) and rng:RandomInt(20) == 1 and not feared then -- move toward player slow
 			npc.State = NpcState.STATE_MOVE
 			add_velocity_and_flip(npc, Vector.FromAngle(player_angle + (rng:RandomInt(160) - 80)) * Vector(rng:RandomInt(3)+3, rng:RandomInt(3)+3))
 			sprite:Play("Move")
@@ -273,37 +273,37 @@ function mod:dumplingUpdate(npc)
 	elseif npc.State == NpcState.STATE_INIT then -- if newly spawned
 		npc.State = NpcState.STATE_IDLE
 
-		if npc.Variant == RestoredMonsterPack.ENTITY_INFO.SKINLING.VARIANT then
+		if npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.SKINLING.VARIANT then
 			npc.SplatColor = Color(0.6,0.8,0.6, 1, 0,0.1,0)
 		end
 	end
 end
-mod:AddCallback(ModCallbacks.MC_NPC_UPDATE, mod.dumplingUpdate, RestoredMonsterPack.ENTITY_INFO.DUMPLING.ID)
+mod:AddCallback(ModCallbacks.MC_NPC_UPDATE, mod.dumplingUpdate, RestoredMonsterPackJF.ENTITY_INFO.DUMPLING.ID)
 
 function mod:dumplingInit(npc)
 	local rng = npc:GetDropRNG()
-    if npc.Variant == RestoredMonsterPack.ENTITY_INFO.GILDED_DUMPLING.VARIANT then
+    if npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.GILDED_DUMPLING.VARIANT then
         npc:GetData()["CoinCounter"] = rng:RandomInt(3)+3
     end
     npc:GetData()["Farting"] = -1
     npc:GetData()["HurtAttackCooldown"] = 0
 end
-mod:AddCallback(ModCallbacks.MC_POST_NPC_INIT, mod.dumplingInit, RestoredMonsterPack.ENTITY_INFO.DUMPLING.ID)
+mod:AddCallback(ModCallbacks.MC_POST_NPC_INIT, mod.dumplingInit, RestoredMonsterPackJF.ENTITY_INFO.DUMPLING.ID)
 
 -- Fart on damage
 function mod:dumplingDMG(entity, amount, dmg_flags, source)
 	local npc = entity:ToNPC()
 	local rng = entity:GetDropRNG()
 	if amount == 0 then return end
-	if npc.Variant == RestoredMonsterPack.ENTITY_INFO.TAINTED_DUMPLING.VARIANT and npc:GetData()["HurtAttackCooldown"] > 0 then -- tainted damage cooldown
+	if npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.TAINTED_DUMPLING.VARIANT and npc:GetData()["HurtAttackCooldown"] > 0 then -- tainted damage cooldown
         npc:GetData()["HurtAttackCooldown"] = npc:GetData()["HurtAttackCooldown"] - 1
-	elseif npc.Variant == RestoredMonsterPack.ENTITY_INFO.SCORCHLING.VARIANT and dmg_flags == DamageFlag.DAMAGE_FIRE then
+	elseif npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.SCORCHLING.VARIANT and dmg_flags == DamageFlag.DAMAGE_FIRE then
 		return false
 	elseif not npc:HasMortalDamage() then
 		npc.State = NpcState.STATE_ATTACK2
 		entity:GetSprite():Play("Fart")
 	end
-	if npc.Variant == RestoredMonsterPack.ENTITY_INFO.GILDED_DUMPLING.VARIANT and rng:RandomInt(2) == 1 and npc:GetData()["CoinCounter"] > 0 then -- drop fixed amount of coins
+	if npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.GILDED_DUMPLING.VARIANT and rng:RandomInt(2) == 1 and npc:GetData()["CoinCounter"] > 0 then -- drop fixed amount of coins
         npc:GetData()["CoinCounter"] = npc:GetData()["CoinCounter"] - 1
         for var=1,rng:RandomInt(2) do -- spawn coins
             if rng:RandomInt(16) == 1 then
@@ -318,13 +318,13 @@ function mod:dumplingDMG(entity, amount, dmg_flags, source)
     end
 
 end
-mod:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG, mod.dumplingDMG, RestoredMonsterPack.ENTITY_INFO.DUMPLING.ID)
+mod:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG, mod.dumplingDMG, RestoredMonsterPackJF.ENTITY_INFO.DUMPLING.ID)
 
 -- Fart on death
 function mod:dumplingDeath(entity)
     local rng = entity:GetDropRNG()
 	local npc = entity:ToNPC()
-    if npc.Variant == RestoredMonsterPack.ENTITY_INFO.TAINTED_DUMPLING.VARIANT then -- tainted explosion
+    if npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.TAINTED_DUMPLING.VARIANT then -- tainted explosion
         game:ButterBeanFart(npc.Position, 100, npc, true, true)
         game:Fart(npc.Position, 100, npc, 2)
         local params = ProjectileParams()
@@ -340,7 +340,7 @@ function mod:dumplingDeath(entity)
 		-- print("death")
 		fart(entity)
 	end
-	if npc.Variant == RestoredMonsterPack.ENTITY_INFO.GILDED_DUMPLING.VARIANT then -- if also gilded, spawn coins
+	if npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.GILDED_DUMPLING.VARIANT then -- if also gilded, spawn coins
         for var=0,rng:RandomInt(3)+1 do -- spawn coins
             if rng:RandomInt(16) == 1 then
                 Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COIN, CoinSubType.COIN_NICKEL, npc.Position, Vector((rng:RandomInt(6)-3)*2,(rng:RandomInt(6)-3)*2), npc) -- 1/16 dime chance
@@ -361,7 +361,7 @@ function mod:dumplingDeath(entity)
         end
     end
 end
-mod:AddCallback(ModCallbacks.MC_POST_NPC_DEATH, mod.dumplingDeath, RestoredMonsterPack.ENTITY_INFO.DUMPLING.ID)
+mod:AddCallback(ModCallbacks.MC_POST_NPC_DEATH, mod.dumplingDeath, RestoredMonsterPackJF.ENTITY_INFO.DUMPLING.ID)
 
 function mod:NPCProjectileInit(projectile_npc)
     local rng = projectile_npc:GetDropRNG()

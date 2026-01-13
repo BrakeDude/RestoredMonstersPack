@@ -1,4 +1,4 @@
-local mod = RestoredMonsterPack
+local mod = RestoredMonsterPackJF
 local game = Game()
 
 local CORPSE_EATER = mod.ENTITY_INFO.CORPSE_EATER

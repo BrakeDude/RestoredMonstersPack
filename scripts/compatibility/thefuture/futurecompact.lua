@@ -1,4 +1,4 @@
-local mod = RestoredMonsterPack
+local mod = RestoredMonsterPackJF
 
 local FutureRooms = require("resources.luarooms.thefuture.future_rm")
 local FutureChallengeRooms = require("resources.luarooms.thefuture.future_challenge_rm")

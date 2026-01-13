@@ -1,6 +1,6 @@
-RestoredMonsterPack = RegisterMod("Restored Monster Pack", 1)
-CutMonsterPack = RestoredMonsterPack
-local mod = RestoredMonsterPack
+RestoredMonsterPackJF = RegisterMod("Restored Monster Pack: Judgement Free", 1)
+CutMonsterPack = RestoredMonsterPackJF
+local mod = RestoredMonsterPackJF
 local game = Game()
 
 --[[/////////////////////////////////////////--
@@ -8,14 +8,14 @@ local game = Game()
 
 Adding / Removing entry:
 AMLblacklistEntry(blacklist, Type, Variant, SubType, operation)
-	there are 3 possible blacklists: "Coil", "Necromancer" and "Corpse Eater"
+	there are 3 possible blacklists: "​Coil", "Necromancer" and "Corpse Eater"
 	the possible operations are "add" and "remove"
 	if the function fails (eg. if you're trying to remove an entry that doesn't exist), it will give an error in the console and return false, otherwise it will return true
 	setting the Type or Variant to -1 will include all variants or subtypes
 
 Checking for blacklist entries:
 mod:inAMLblacklist(blacklist, checkType, checkVariant, checkSubType)
-	there are 3 possible blacklists: "Coil", "Necromancer" and "Corpse Eater"
+	there are 3 possible blacklists: "​Coil", "Necromancer" and "Corpse Eater"
 	returns true if the specified entity is in the blacklist, returns false otherwise
 	setting the Type or Variant to -1 will include all variants or subtypes
 
@@ -41,7 +41,7 @@ mod:GetEatenEffect(checkType, checkVariant, checkSubType)
 --[[--------------------------------------------------------
     Enums
 --]]--------------------------------------------------------
----@display RestoredMonsterPack Enum Table
+---@display RestoredMonsterPackJF Enum Table
 ---@class RMEnum
 ---@field ID EntityType
 ---@field VARIANT integer
@@ -60,8 +60,8 @@ local function makeEnumTable(name, subtype)
 end
 
 -- Monsters
--- To get the information of an entity, type RestoredMonsterPack.ENTITY_INFO.NAME_OF_THE_MONSTER then ID for EntityType, VARIANT for EntityVariant and SUBTYPE for Subtype
-RestoredMonsterPack.ENTITY_INFO = {
+-- To get the information of an entity, type RestoredMonsterPackJF.ENTITY_INFO.NAME_OF_THE_MONSTER then ID for EntityType, VARIANT for EntityVariant and SUBTYPE for Subtype
+RestoredMonsterPackJF.ENTITY_INFO = {
 	DUMPLING = makeEnumTable("Dumpling"),
 	SKINLING = makeEnumTable("Skinling"),
 	SCAB = makeEnumTable("Scab"),
@@ -92,7 +92,7 @@ RestoredMonsterPack.ENTITY_INFO = {
 	CHUBBY_BUNNY = makeEnumTable("Chubby Bunny"),
 	STILLBORN = makeEnumTable("Stillborn"),
 	NECROMANCER = makeEnumTable("Necromancer"),
-	COIL = makeEnumTable("Coil"),
+	COIL = makeEnumTable("​Coil"),
 	SCREAMER = makeEnumTable("Screamer"),
 	RED_TNT = makeEnumTable("Red TNT"),
 	CELL = makeEnumTable("Cell"),
@@ -204,8 +204,8 @@ end)
 
 local coil_blacklist = {
 	{EntityType.ENTITY_LUMP, -1, -1},
-	{RestoredMonsterPack.ENTITY_INFO.COIL.ID, RestoredMonsterPack.ENTITY_INFO.COIL.VARIANT, -1},
-	{RestoredMonsterPack.ENTITY_INFO.RED_TNT.ID, RestoredMonsterPack.ENTITY_INFO.RED_TNT.VARIANT, -1},
+	{RestoredMonsterPackJF.ENTITY_INFO.COIL.ID, RestoredMonsterPackJF.ENTITY_INFO.COIL.VARIANT, -1},
+	{RestoredMonsterPackJF.ENTITY_INFO.RED_TNT.ID, RestoredMonsterPackJF.ENTITY_INFO.RED_TNT.VARIANT, -1},
 	{EntityType.ENTITY_GRUB, 100, 1}, -- Corpse eater body
 	{EntityType.ENTITY_EVIS, 10, -1}, -- Evis cord
 	{EntityType.ENTITY_NEEDLE, -1, -1},
@@ -254,7 +254,7 @@ local corpse_eater_blacklist = {
 -- Add / remove blacklist entry
 function mod:AMLblacklistentry(blacklist, Type, Variant, SubType, operation)
 	-- Error checking
-	if blacklist ~= "Coil" and blacklist ~= "Necromancer" and blacklist ~= "Corpse Eater" then
+	if blacklist ~= "​Coil" and blacklist ~= "Necromancer" and blacklist ~= "Corpse Eater" then
 		print("[CMP] Error adding / removing blacklist entry:\n   Incorrect blacklist: " .. blacklist)
 	end
 	if operation ~= "add" and operation ~= "remove" then
@@ -264,7 +264,7 @@ function mod:AMLblacklistentry(blacklist, Type, Variant, SubType, operation)
 
 	-- Get blacklist
 	local checkList = {}
-	if blacklist == "Coil" then
+	if blacklist == "​Coil" then
 		checkList = coil_blacklist
 	elseif blacklist == "Necromancer" then
 		checkList = necromancer_blacklist
@@ -300,13 +300,13 @@ end
 
 -- Check if the entity is in the blacklist or not
 function mod:inAMLblacklist(blacklist, checkType, checkVariant, checkSubType)
-	if blacklist ~= "Coil" and blacklist ~= "Necromancer" and blacklist ~= "Corpse Eater" then
+	if blacklist ~= "​Coil" and blacklist ~= "Necromancer" and blacklist ~= "Corpse Eater" then
 		print("[CMP] Error checking blacklist:\n   Incorrect blacklist: " .. blacklist)
 		return
 	end
 
 	local checkList = {}
-	if blacklist == "Coil" then
+	if blacklist == "​Coil" then
 		checkList = coil_blacklist
 	elseif blacklist == "Necromancer" then
 		checkList = necromancer_blacklist
@@ -516,8 +516,8 @@ function mod:replaceID(Type, Variant, SubType, GridIndex, Seed)
 		return {mod.ENTITY_INFO.GILDED_DUMPLING.ID, mod.ENTITY_INFO.GILDED_DUMPLING.VARIANT, SubType}
 
 	--[[ FRACTURE ]]--
-	elseif Type == RestoredMonsterPack.ENTITY_INFO.FRACTURE.SUBTYPE and Variant == 0 and SubType == 0 then
-		return {EntityType.ENTITY_HOPPER, 1, RestoredMonsterPack.ENTITY_INFO.FRACTURE.SUBTYPE}
+	elseif Type == RestoredMonsterPackJF.ENTITY_INFO.FRACTURE.SUBTYPE and Variant == 0 and SubType == 0 then
+		return {EntityType.ENTITY_HOPPER, 1, RestoredMonsterPackJF.ENTITY_INFO.FRACTURE.SUBTYPE}
 
 	--[[ RED TNT ]]--
 	elseif Type == mod.ENTITY_INFO.STILLBORN.ID and Variant == mod.ENTITY_INFO.RED_TNT.VARIANT then
@@ -566,8 +566,8 @@ mod.DummyReplace = {
 }
 
 mod.UnlockReplace = {
-	[EntityType.ENTITY_HOPPER.." ".. 1 .." "..RestoredMonsterPack.ENTITY_INFO.FRACTURE.SUBTYPE] = {EntityType.ENTITY_HOPPER, 1, -1}, --trite
-	[RestoredMonsterPack.ENTITY_INFO.FRACTURE.SUBTYPE.." ".. 0 .." ".. 0] = {EntityType.ENTITY_HOPPER, 1, -1}, --trite
+	[EntityType.ENTITY_HOPPER.." ".. 1 .." "..RestoredMonsterPackJF.ENTITY_INFO.FRACTURE.SUBTYPE] = {EntityType.ENTITY_HOPPER, 1, -1}, --trite
+	[RestoredMonsterPackJF.ENTITY_INFO.FRACTURE.SUBTYPE.." ".. 0 .." ".. 0] = {EntityType.ENTITY_HOPPER, 1, -1}, --trite
 }
 
 local ign = false

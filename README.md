@@ -1,29 +1,23 @@
 # Restored Monsters
 
-Forgotten enemies have returned to the basement! Restored Monsters Pack is a mod that adds enemies ranging from unused monsters left in Repentance to new enemies based of developer concepts
+This is an alternate version of Restored Monsters Pack that includes any content removed from the original due to overlap with Last Judgement.
 
-![](https://i.imgur.com/t58xA5L.png)
+[b][u]Do not enable this mod alongside Restored Monsters Pack or Last Judgement or else it will cause issues![/u][/b]
 
-## Features
-30+ enemies, ranging from unused monsters left in Repentance to new enemies based of developer concepts
-A new TNT variant
-Many new rooms, with some from the original Antibirth mod
-Reworks and polishing of some of the enemies from their previous iterations (No more Dumplings camping rocks!)
-Compatibility, The enemies from this mod also show up on modded floors, such as Boiler and Glacier. Some modded floors even have unique crossover enemies! (It has no overlap with Last Judgement)
-You can read more about the enemies added by this mod on our wiki! ( https://moddingofisaac.wiki.gg/wiki/Restored_Mods )
+## FAQ
+
+[b]Why not include these enemies in the original mod?[/b]
+With Last Judgement being the definitive cut content experience, we try to make it so the Restored Mods don't have any content overlap with the mod at all. Most content in Last Judgement is significantly different than what Restored Mods has despite both building off the same concepts, with LJ usually diverging from the original design while RM is more faithful to how it was in Antibirth. However, there are some cases in which Last Judgement implements content already in Restored Monsters 1 to 1. Since LJ has more of a creative right to use this content than us, we have opted to remove features from Restored Mods if we feel that LJ has done a better job at implementing it.
+
+However, we have seen some users requesting that we put whatever we remove from Restored Monsters into a seperate mod so that it can be enjoyed if you do not want to use REPENTOGON+ or Last Judgement.
+
+[b]What is the difference between this mod and Restored Monsters?[/b]
+Both mods are near identical, with the "Judgement Free" edition including 3 enemies that already exist in Last Judgement. This list will expand once Last Judgement gets updated for the final time. When this update does come out, any content in RM that we feel is too similar to anything in this LJ update will be removed from the main mod and moved here.
+
+[b]Does this mod require REPENTOGON+?[/b]
+This mod does not require REPENTOGON+, but it is recommended for a better, bug free experience.
 
 [h2]Works with Repentance+![/h2] 
-
-## Caution!
-The following mods are included in some form within Restored Monsters Pack, and should not be used in conjunction with it:
-    
-Cut Monsters 
-Antibirth Monsters 
-Antibirth Minus by Sinbiscuit
-Strifers by PixelPlz
-Corpse Eaters by PixelPlz
-Dumplings by 24Chrome, Jubbalub, and We Strvn
-Ghost Babel by Sinbiscuit
 
 
 [h2]Contributors[/h2] 

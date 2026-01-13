@@ -1,5 +1,5 @@
 if not REPENTOGON then return end
-local mod = RestoredMonsterPack
+local mod = RestoredMonsterPackJF
 
 -- ImGui menu
 if not ImGui.ElementExists("RestoredMods") then

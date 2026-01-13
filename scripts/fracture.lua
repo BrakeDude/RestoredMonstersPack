@@ -1,4 +1,4 @@
-local mod = RestoredMonsterPack
+local mod = RestoredMonsterPackJF
 local game = Game()
 
 local Settings = {
@@ -12,7 +12,7 @@ local States = {
 	StandSpit = 2
 }
 
-local FRACTURE = RestoredMonsterPack.ENTITY_INFO.FRACTURE
+local FRACTURE = RestoredMonsterPackJF.ENTITY_INFO.FRACTURE
 
 function mod:fractureInit(entity)
 	if entity.Variant == FRACTURE.VARIANT

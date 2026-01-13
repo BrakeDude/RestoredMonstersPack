@@ -62,13 +62,15 @@
 <entity Image="resources/Receptacle.png" Name="Receptacle" ID="858" Subtype="1" Variant="1" baseHP="25" Armor="3" Tags="Champion" Group="Monsters" Kind="Restored Monsters Pack"/>
 <entity Image="resources/Miasma.png" Name="Miasma" ID="858" Subtype="2" Variant="1" baseHP="20" Armor="3" Tags="Champion" Group="Monsters" Kind="Restored Monsters Pack"/>
 <!-- Canary -->
-<entity Image="resources/Canary.png" Name="Canary (TC)" ID="843" Subtype="0" Variant="200" Metadata="1" BaseHP="16" Tags="Champion" Group="Monsters" Kind="Restored Monsters Pack"/>
+<entity Image="resources/Canary.png" Name="Canary (RM)" ID="843" Subtype="0" Variant="200" Metadata="1" BaseHP="16" Tags="Champion" Group="Monsters" Kind="Restored Monsters Pack"/>
 <!-- Foreigner -->
-<entity Image="resources/Foreigner.png" Name="Foreigner (TC)" ID="843" Subtype="0" Variant="201" Metadata="1" BaseHP="18" Tags="Champion"   Group="Monsters" Kind="Restored Monsters Pack"/>
+<entity Image="resources/Foreigner.png" Name="Foreigner (RM)" ID="843" Subtype="0" Variant="201" Metadata="1" BaseHP="18" Tags="Champion" Group="Monsters" Kind="Restored Monsters Pack"/>
 <!-- Corse Eater -->
 <entity Image="resources/Corpse Eater.png" Name="Corpse Eater (RM)" ID="239" Subtype="0" Variant="200" Metadata="1" BaseHP="30" StageHP="2.5" Armor="3" Group="Monsters" Kind="Restored Monsters Pack"/>
 <!-- Carrion Rider -->
 <entity Image="resources/Carrion Rider.png" Name="Carrion Rider (RM)" ID="239" Variant="201" Subtype="0" Metadata="1" BaseHP="30" StageHP="2.5" Armor="3"  Group="Monsters" Kind="Restored Monsters Pack"/>
+<!-- Coil -->
+<entity Image="resources/Coil.png" Name="Coil (RM)" ID="200" Variant="2406" Subtype="0" BaseHP="20" StageHP="0" Group="Grimace" Kind="Restored Monsters Pack"/>
 <!-- Blind Bat -->
 <entity Image="resources/Blind Bat.png" Name="Blind Bat (RM)" ID="803" Variant="200" Subtype="3" BaseHP="10" Group="Monsters" Kind="Restored Monsters Pack">
 		<bitfield Key="Subtype">
@@ -255,6 +257,8 @@
 		<entity Name="Blind Bat (RM)"/>
 		<entity Name="Echo Bat"/>
 		<entity Name="Dumpling"/>
+		<entity Name="Canary (RM)"/>
+		<entity Name="Foreigner (RM)"/>
 	</group>
 
 	<group Name="Chapter 3 (Main Path) Enemies">
@@ -291,6 +295,11 @@
 		<entity Name="Screamer"/>
 		<entity Name="Fanatic"/>
 		<entity Name="Rag Creep (RM)"/>
+	</group>
+
+	<group Name="Gehenna Enemies">
+		<entity Name="Canary (RM)"/>
+		<entity Name="Foreigner (RM)"/>
 	</group>
 
 	<group Name="Gehenna Obstacles">
@@ -333,6 +342,10 @@
 		<entity Name="Miasma"/>
 		<entity Name="Vessel (Antibirth)"/>
 		<entity Name="Lump"/>
+	</group>
+
+	<group Name="Corpse Obstacles">
+		<entity Name="Coil (RM)"/>
 	</group>
 
 	<group Name="Chapter 5 (Main Path) Enemies">

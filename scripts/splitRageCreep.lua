@@ -1,4 +1,4 @@
-local mod = RestoredMonsterPack
+local mod = RestoredMonsterPackJF
 local game = Game()
 
 local ENTITY = mod.ENTITY_INFO.SPLIT_RAGE_CREEP

@@ -17,7 +17,7 @@ return function(mode)
     {Name="Swapper",Anm2="835.000_swapper.anm2",HP=25,Champion=true,CollisionMass=10,CollisionRadius=13,ShadowSize=16,NumGridCollisionPoints=8,Type=38,Variant=835,GridCollision="walls",Portrait=11,Reroll="true",},
     {Name="Swapper (Gehenna)",Anm2="835.000_swapper_gehenna.anm2",HP=25,Champion=true,CollisionMass=10,CollisionRadius=13,ShadowSize=16,NumGridCollisionPoints=8,Type=38,Variant=835,Subtype=1,GridCollision="walls",Portrait=12,Reroll="true",},
     {Name="Barfy",Anm2="850.000_barfy.anm2",HP=70,Champion=true,CollisionDamage=1,CollisionMass=10,CollisionRadius=13,ShadowSize=16,NumGridCollisionPoints=12,Type=208,Variant=850,Portrait=12,Reroll="true",},
-    {Name="Coil",Anm2="864.000_coil.anm2",HP=20,CollisionDamage=1,CollisionMass=100,CollisionRadius=10,Friction=0,ShadowSize=13,NumGridCollisionPoints=12,Type=200,Variant=2406,Tags="noreroll",GridCollision="none",ShutDoors="false",Portrait=13,},
+    {Name="​Coil",Anm2="864.000_coil.anm2",HP=20,CollisionDamage=1,CollisionMass=100,CollisionRadius=10,Friction=0,ShadowSize=13,NumGridCollisionPoints=12,Type=200,Variant=2406,Tags="noreroll",GridCollision="none",ShutDoors="false",Portrait=13,},
     {Name="Screamer",Anm2="867.000_screamer.anm2",HP=100,CollisionDamage=2,CollisionMass=950,CollisionRadius=13,ShadowSize=18,NumGridCollisionPoints=12,Type=200,Variant=2411,Portrait=14,},
     {Name="Cell",Anm2="cell.anm2",HP=16,CollisionDamage=1,CollisionMass=16,CollisionRadius=13,ShadowSize=12,NumGridCollisionPoints=12,Type=200,Variant=2500,GridCollision="walls",Portrait=15,},
     {Name="Fused Cells",Anm2="fused_cells.anm2",HP=32,CollisionDamage=1,CollisionMass=16,CollisionRadius=16,ShadowSize=20,NumGridCollisionPoints=12,Type=200,Variant=2501,GridCollision="walls",Portrait=16,},

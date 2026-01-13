@@ -33,4 +33,7 @@ return {
 	Nightwatch = GED("​Nightwatch"),
 	VesselAntibirth = GED("​Vessel (Antibirth)"),
 	Strifer = GED("​Strifer"),
+	Coil = GED("​Coil"),
+	Canary = GED("​Canary"),
+	Foreigner = GED("​Foreigner")
 }

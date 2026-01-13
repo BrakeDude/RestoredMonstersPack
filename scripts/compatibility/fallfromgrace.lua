@@ -1,10 +1,10 @@
-local mod = RestoredMonsterPack
+local mod = RestoredMonsterPackJF
 if FFGRACE then
     local basepath = "gfx/monsters/"
 
 
     --boiler
-    FFGRACE.StageSkins.Boiler[RestoredMonsterPack.ENTITY_INFO.DUMPLING.ID.." "..0] = {
+    FFGRACE.StageSkins.Boiler[RestoredMonsterPackJF.ENTITY_INFO.DUMPLING.ID.." "..0] = {
                 {{0}, basepath.."boiler/dumpling_boiler"},
             }
 
@@ -51,7 +51,7 @@ if FFGRACE then
 
     }
 
-    FFGRACE.SkeeterEntData["RestoredMonsterPack"] = {
+    FFGRACE.SkeeterEntData["RestoredMonsterPackJF"] = {
       [mod.ENTITY_INFO.STILLBORN.ID.." "..mod.ENTITY_INFO.STILLBORN.VARIANT] = "Hard",
       [EntityType.ENTITY_BRIMSTONE_HEAD.." "..mod.ENTITY_INFO.FIRE_GRIMACE.VARIANT] = "Hard",
 
@@ -66,7 +66,7 @@ if FFGRACE then
 
       [mod.ENTITY_INFO.RED_TNT.ID.." "..mod.ENTITY_INFO.RED_TNT.VARIANT] = "Blacklisted",
     }
-    for key, entry in pairs(FFGRACE.SkeeterEntData["RestoredMonsterPack"]) do
+    for key, entry in pairs(FFGRACE.SkeeterEntData["RestoredMonsterPackJF"]) do
       FFGRACE.SkeeterEntData[key] = entry
     end
 

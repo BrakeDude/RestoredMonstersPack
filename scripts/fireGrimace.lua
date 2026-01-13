@@ -1,4 +1,4 @@
-local mod = RestoredMonsterPack
+local mod = RestoredMonsterPackJF
 local FIRE_GRIMACE = mod.ENTITY_INFO.FIRE_GRIMACE
 
 

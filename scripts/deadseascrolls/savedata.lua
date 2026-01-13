@@ -1,24 +1,24 @@
 SaveManager = include("scripts.deadseascrolls.save_manager")
-SaveManager.Init(RestoredMonsterPack)
+SaveManager.Init(RestoredMonsterPackJF)
 SaveManager.Load()
 
-RestoredMonsterPack.DSSavedata = SaveManager.GetDeadSeaScrollsSave()
+RestoredMonsterPackJF.DSSavedata = SaveManager.GetDeadSeaScrollsSave()
 
 include("scripts.deadseascrolls.defaultSettings")
 
-RestoredMonsterPack:AddCallback(ModCallbacks.MC_PRE_GAME_EXIT, function()
+RestoredMonsterPackJF:AddCallback(ModCallbacks.MC_PRE_GAME_EXIT, function()
 	Isaac.DebugString("PREGAMEEXITPRESAVE")
     SaveManager.Save()
 	Isaac.DebugString("PREGAMEEXITPOSTSAVE")
-    RestoredMonsterPack.gamestarted = false
+    RestoredMonsterPackJF.gamestarted = false
 end)
 
-RestoredMonsterPack:AddCallback(ModCallbacks.MC_POST_GAME_END, function()
-    RestoredMonsterPack.gamestarted = false
+RestoredMonsterPackJF:AddCallback(ModCallbacks.MC_POST_GAME_END, function()
+    RestoredMonsterPackJF.gamestarted = false
 end)
 
-RestoredMonsterPack:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, function()
-    if RestoredMonsterPack.gamestarted then
+RestoredMonsterPackJF:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, function()
+    if RestoredMonsterPackJF.gamestarted then
         SaveManager.Save()
     end
 end)

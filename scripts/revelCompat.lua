@@ -1,4 +1,4 @@
-local mod = RestoredMonsterPack
+local mod = RestoredMonsterPackJF
 local game = Game()
 
 ---@param ta table
@@ -64,7 +64,7 @@ mod:AddPriorityCallback(ModCallbacks.MC_POST_GAME_STARTED, CallbackPriority.IMPO
 
 		[EntityType.ENTITY_HOPPER] = {
 			[1] = {
-				[RestoredMonsterPack.ENTITY_INFO.FRACTURE.SUBTYPE] = {
+				[RestoredMonsterPackJF.ENTITY_INFO.FRACTURE.SUBTYPE] = {
 					SPRITESHEET = {
 						[0] = "fracture_glacier",
 					}
@@ -110,7 +110,7 @@ end)
 
 -- Ice Hazards
 function mod:DumplingIceHazards(npc)
-  if npc.Variant == RestoredMonsterPack.ENTITY_INFO.DUMPLING.ID then
+  if npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.DUMPLING.ID then
     local sprite = npc:GetSprite()
     local data = npc:GetData()
     if not data.RevIceHazard then
@@ -122,14 +122,14 @@ end
 mod:AddCallback(ModCallbacks.MC_NPC_UPDATE, mod.DumplingIceHazards, 481)
 
 function mod:RemoveIceHazards(npc)
-  if npc.Variant == RestoredMonsterPack.ENTITY_INFO.DUMPLING.ID then
+  if npc.Variant == RestoredMonsterPackJF.ENTITY_INFO.DUMPLING.ID then
     local sprite = npc:GetSprite()
     local data = npc:GetData()
     if npc.FrameCount < 5 then
         return
     end
     if data.RevIceHazard then
-        local entity = Isaac.Spawn(RestoredMonsterPack.ENTITY_INFO.DUMPLING.ID,0, 0, npc.Position, Vector(0,0), npc.SpawnerEntity or npc):ToNPC()
+        local entity = Isaac.Spawn(RestoredMonsterPackJF.ENTITY_INFO.DUMPLING.ID,0, 0, npc.Position, Vector(0,0), npc.SpawnerEntity or npc):ToNPC()
         entity:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
         entity:Update()
         data.FromIceHazard = true

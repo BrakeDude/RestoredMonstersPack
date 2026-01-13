@@ -1,6 +1,6 @@
-local mod = RestoredMonsterPack
+local mod = RestoredMonsterPackJF
 
-local DSSModName = "Dead Sea Scrolls (RestoredMonsterPack)"
+local DSSModName = "Dead Sea Scrolls (RestoredMonsterPackJF)"
 
 local DSSCoreVersion = 7
 
@@ -119,10 +119,10 @@ local restoreddirectory = {
                         variable = "vesselType",
                         setting = 1,
                         load = function()
-                            return RestoredMonsterPack.DSSavedata.vesselType or 1
+                            return RestoredMonsterPackJF.DSSavedata.vesselType or 1
                         end,
                         store = function(var)
-                            RestoredMonsterPack.DSSavedata.vesselType = var
+                            RestoredMonsterPackJF.DSSavedata.vesselType = var
                         end,
                         tooltip = {strset = {'replaces', 'vessels with', 'their legacy', 'version','','disabled by', 'default'}}
         
@@ -137,10 +137,10 @@ local restoreddirectory = {
                         slider = true,
                         setting = 3,
                         load = function()
-                            return RestoredMonsterPack.DSSavedata.blindBatScreamInc or 3
+                            return RestoredMonsterPackJF.DSSavedata.blindBatScreamInc or 3
                         end,
                         store = function(var)
-                            RestoredMonsterPack.DSSavedata.blindBatScreamInc = var
+                            RestoredMonsterPackJF.DSSavedata.blindBatScreamInc = var
                         end,
                         tooltip = {strset = {'changes how', 'strong the', 'blind bat','effect is','','at 3 by', 'default'}}
         

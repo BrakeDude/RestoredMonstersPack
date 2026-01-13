@@ -37,6 +37,8 @@ local data = {
     {c.Strifer,          vc.MazeRoamer},
     {vc.Cyclopia,          c.Strifer},
     {c.VesselAntibirth,          c.GildedDumpling},
+    {vc.Cyclopia,           c.Canary},
+    {c.Canary,          c.Foreigner}
     
 }
 
