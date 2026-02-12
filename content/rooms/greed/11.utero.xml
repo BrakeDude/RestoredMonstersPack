@@ -708,22 +708,22 @@
 		<door exists="True" x="13" y="3"/>
 		<door exists="True" x="13" y="10"/>
 		<spawn x="3" y="1">
-			<entity type="801" variant="0" subtype="0" weight="1.0"/>
+			<entity type="29" variant="1" subtype="801" weight="1.0"/>
 		</spawn>
 		<spawn x="11" y="1">
 			<entity type="29" variant="2" subtype="0" weight="1.0"/>
 		</spawn>
 		<spawn x="1" y="2">
-			<entity type="801" variant="0" subtype="0" weight="1.0"/>
+			<entity type="29" variant="1" subtype="801" weight="1.0"/>
 		</spawn>
 		<spawn x="11" y="11">
-			<entity type="801" variant="0" subtype="0" weight="1.0"/>
+			<entity type="29" variant="1" subtype="801" weight="1.0"/>
 		</spawn>
 		<spawn x="1" y="12">
 			<entity type="29" variant="2" subtype="0" weight="1.0"/>
 		</spawn>
 		<spawn x="9" y="12">
-			<entity type="801" variant="0" subtype="0" weight="1.0"/>
+			<entity type="29" variant="1" subtype="801" weight="1.0"/>
 		</spawn>
 	</room>
 	<room variant="24030" name="[RM] - Greed Wave 20" type="11" subtype="0" shape="4" width="13" height="14" difficulty="5" weight="1.0">
@@ -734,7 +734,7 @@
 		<door exists="True" x="13" y="3"/>
 		<door exists="True" x="13" y="10"/>
 		<spawn x="2" y="1">
-			<entity type="801" variant="0" subtype="0" weight="1.0"/>
+			<entity type="29" variant="1" subtype="801" weight="1.0"/>
 		</spawn>
 		<spawn x="4" y="1">
 			<entity type="85" variant="0" subtype="0" weight="1.0"/>
@@ -746,10 +746,10 @@
 			<entity type="85" variant="0" subtype="0" weight="1.0"/>
 		</spawn>
 		<spawn x="10" y="1">
-			<entity type="801" variant="0" subtype="0" weight="1.0"/>
+			<entity type="29" variant="1" subtype="801" weight="1.0"/>
 		</spawn>
 		<spawn x="2" y="12">
-			<entity type="801" variant="0" subtype="0" weight="1.0"/>
+			<entity type="29" variant="1" subtype="801" weight="1.0"/>
 		</spawn>
 		<spawn x="4" y="12">
 			<entity type="85" variant="0" subtype="0" weight="1.0"/>
@@ -761,7 +761,7 @@
 			<entity type="85" variant="0" subtype="0" weight="1.0"/>
 		</spawn>
 		<spawn x="10" y="12">
-			<entity type="801" variant="0" subtype="0" weight="1.0"/>
+			<entity type="29" variant="1" subtype="801" weight="1.0"/>
 		</spawn>
 	</room>
 	<room variant="24031" name="[RM] - Greed Wave 21" type="11" subtype="0" shape="4" width="13" height="14" difficulty="5" weight="1.0">
@@ -775,16 +775,16 @@
 			<entity type="241" variant="0" subtype="0" weight="1.0"/>
 		</spawn>
 		<spawn x="1" y="5">
-			<entity type="801" variant="0" subtype="0" weight="1.0"/>
+			<entity type="29" variant="1" subtype="801" weight="1.0"/>
 		</spawn>
 		<spawn x="11" y="5">
-			<entity type="801" variant="0" subtype="0" weight="1.0"/>
+			<entity type="29" variant="1" subtype="801" weight="1.0"/>
 		</spawn>
 		<spawn x="1" y="8">
-			<entity type="801" variant="0" subtype="0" weight="1.0"/>
+			<entity type="29" variant="1" subtype="801" weight="1.0"/>
 		</spawn>
 		<spawn x="11" y="8">
-			<entity type="801" variant="0" subtype="0" weight="1.0"/>
+			<entity type="29" variant="1" subtype="801" weight="1.0"/>
 		</spawn>
 		<spawn x="13" y="12">
 			<entity type="241" variant="0" subtype="0" weight="1.0"/>
