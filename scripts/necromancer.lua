@@ -142,7 +142,7 @@ function mod:necromancerUpdate(entity)
 				-- Spawn a Bony and set it as the Necromancer's child
 				elseif data.state == States.Spawn then
 					SFXManager():Play(SoundEffect.SOUND_SUMMONSOUND, 1, 0, false, 1, 0)
-					entity.Child = Isaac.Spawn(EntityType.ENTITY_BONY, 0, mod.ENTITY_INFO.NECROMANCER.VARIANT, Vector(entity.Position.X, entity.Position.Y + 10), Vector.Zero, entity)
+					entity.Child = Isaac.Spawn(EntityType.ENTITY_BONY, 0, 0, Vector(entity.Position.X, entity.Position.Y + 10), Vector.Zero, entity)
 				end
 			end
 
@@ -159,11 +159,12 @@ mod:AddCallback(ModCallbacks.MC_NPC_UPDATE, mod.necromancerUpdate, mod.ENTITY_IN
 
 -- Add dead enemies that aren't blacklisted to the revive table
 function mod:necromancerInRoom(entity)
-	if #Isaac.FindByType(mod.ENTITY_INFO.NECROMANCER.ID, mod.ENTITY_INFO.NECROMANCER.VARIANT) > 0
-		and entity.Type < 1000 and entity.Type > 9
-		and not mod:inRMblacklist("Necromancer", entity.Type, entity.Variant, entity.SubType) then
-		return
-	end
+	-- if there are any necromancers in the room
+	if #Isaac.FindByType(mod.ENTITY_INFO.NECROMANCER.ID, mod.ENTITY_INFO.NECROMANCER.VARIANT) == 0 then return end
+	-- if the entity is valid
+	if not (entity.Type < 1000 and entity.Type > 9) then return end
+	-- and it's not in the necromancer blacklist
+	if mod:inRMblacklist("Necromancer", entity.Type, entity.Variant, entity.SubType) then return end
 	local room = game:GetRoom()
 	local getType = entity.Type
 	local getVariant = entity.Variant

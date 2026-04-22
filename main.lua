@@ -137,7 +137,7 @@ end]]
 --]]--------------------------------------------------------
 
 local necromancer_blacklist = {
-	{EntityType.ENTITY_BONY, -1, mod.ENTITY_INFO.NECROMANCER.VARIANT}, -- Bonys spawned by Necromancers
+	{EntityType.ENTITY_BONY, -1, -1}, -- Bonys spawned by Necromancers
 	{EntityType.ENTITY_LITTLE_HORN, 1, -1}, -- Dark ball
 	{EntityType.ENTITY_RAG_MEGA, 1, -1}, -- Purple ball
 	{EntityType.ENTITY_BIG_BONY, 10, -1}, -- Bouncing bone
