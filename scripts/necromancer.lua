@@ -159,8 +159,8 @@ mod:AddCallback(ModCallbacks.MC_NPC_UPDATE, mod.necromancerUpdate, mod.ENTITY_IN
 
 -- Add dead enemies that aren't blacklisted to the revive table
 function mod:necromancerInRoom(entity)
-	if #Isaac.FindByType(mod.ENTITY_INFO.NECROMANCER.ID, mod.ENTITY_INFO.NECROMANCER.VARIANT) > 0 
-		and entity.Type < 1000 and entity.Type > 9 
+	if #Isaac.FindByType(mod.ENTITY_INFO.NECROMANCER.ID, mod.ENTITY_INFO.NECROMANCER.VARIANT) > 0
+		and entity.Type < 1000 and entity.Type > 9
 		and not mod:inRMblacklist("Necromancer", entity.Type, entity.Variant, entity.SubType) then
 		return
 	end

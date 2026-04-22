@@ -197,6 +197,19 @@ function mod:inRMblacklist(blacklist, checkType, checkVariant, checkSubType)
 	if blacklist == "Necromancer" then
 		checkList = necromancer_blacklist
 	end
+
+	for _, entity in ipairs(checkList) do
+		local type, var, sub = entity[1], entity[2], entity[3]
+
+		if type == -1 or checkType == type then
+			if var == -1 or checkVariant == var then
+				if sub == -1 or checkSubType == sub then
+					return true
+				end
+			end
+		end
+	end
+	return false
 end
 
 --if an entity is a listed entry in a table
