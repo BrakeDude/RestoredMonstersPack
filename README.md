@@ -29,7 +29,7 @@ Ghost Babel by Sinbiscuit
 
 
 [h2]Contributors[/h2] 
-We Strvn, Sillst, Redstinger, Pandora, InfiniteCosmos, Kittenchilly, Mr. R, Kerkel, vor_kakisha, Acexolotl, Goganidze, Michael8587, Watchmeojo, Skelej64, Lesser_Star, ENFOR, PixelPls, Lazarus, Firework, Brakedude, Orange Ice Pop, Reixen, steve2552, Pinchalin, TheReturnofGarnk, and JaRo7126.
+Sillst, Redstinger, Pandora, InfiniteCosmos, Kittenchilly, Mr. R, Kerkel, vor_kakisha, Acexolotl, Goganidze, Michael8587, Watchmeojo, Skelej64, Lesser_Star, ENFOR, PixelPls, Lazarus, Firework, Brakedude, Orange Ice Pop, Reixen, steve2552, Pinchalin, TheReturnofGarnk, JaRo7126, Dpower12 and Shrki.
 
 
 [h2]Special thanks to[/h2] 
