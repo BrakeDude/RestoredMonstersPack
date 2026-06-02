@@ -28,14 +28,14 @@ Dumplings by 24Chrome, Jubbalub, and We Strvn
 Ghost Babel by Sinbiscuit
 
 
-[h2]Contributors[/h2] 
+### Contributors
 Sillst, Redstinger, Pandora, InfiniteCosmos, Kittenchilly, Mr. R, Kerkel, vor_kakisha, Acexolotl, Goganidze, Michael8587, Watchmeojo, Skelej64, Lesser_Star, ENFOR, PixelPls, Lazarus, Firework, Brakedude, Orange Ice Pop, Reixen, steve2552, Pinchalin, TheReturnofGarnk, JaRo7126, Dpower12 and Shrki.
 
 
-[h2]Special thanks to[/h2] 
-[code][u]Public Entertainment Networked Interactive Software[/u] - For the original Antibirth mod as well as the content and concepts that this mod builds off of[/code]
+### Special thanks to
+<ins>Public Entertainment Networked Interactive Software</ins> - For the original Antibirth mod as well as the content and concepts that this mod builds off of
 
 
-[h2]Restored Hub Discord Link[h2]
+## Restored Hub Discord Link
 https://discord.gg/BYGmAhgG8k
 
