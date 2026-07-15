@@ -1,7 +1,6 @@
 RestoredMonsterPackJF = RegisterMod("Restored Monster Pack: Judgement Free", 1)
 CutMonsterPack = RestoredMonsterPackJF
 local mod = RestoredMonsterPackJF
-local game = Game()
 
 --[[/////////////////////////////////////////--
 	HOW TO USE BLACKLIST FUNCTIONS:
