@@ -60,7 +60,7 @@ local function fart(npc)
 		Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.FART, 0, npc.Position, Vector.Zero, npc) -- green fart
 
 		local rng = RNG()
-		rng:SetSeed(npc.DropSeed)
+		rng:SetSeed(npc.DropSeed, 40)
 		local colors = {Color(1, 1, 1), Color(4, 4, 4)}
 		colors[1]:SetColorize(0.62, 0.85, 0.31, 1)
 		colors[2]:SetColorize(0.62, 0.85, 0.31, 1)

@@ -62,7 +62,7 @@ function mod:fractureUpdate(entity)
 		if sprite:IsEventTriggered("SpitBegin") then
 			if sprite:IsPlaying("Hop") then
 				data.state = States.JumpSpit
-				entity.I2 = 0
+				data.shots = 0
 			else
 				data.state = States.StandSpit
 
@@ -99,9 +99,9 @@ function mod:fractureUpdate(entity)
 			end
 
 			if data.state == States.JumpSpit then
-				if math.random(0, 1) == 1 and entity.I2 <= Settings.MaxJumpShots then
+				if math.random(0, 1) == 1 and data.shots <= Settings.MaxJumpShots then
 					entity:FireBossProjectiles(1, entity.TargetPosition, 1.5, params)
-					entity.I2 = entity.I2 + 1
+					data.shots = data.shots + 1
 				end
 
 			elseif data.state == States.StandSpit then
