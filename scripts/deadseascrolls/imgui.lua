@@ -28,6 +28,8 @@ local function UnLoad()
     end
 end
 
+UnLoad()
+
 local function Load()
 	-- Check for existing tab bar
 
