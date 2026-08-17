@@ -6,23 +6,21 @@ local DSSCoreVersion = 7
 
 local MenuProvider = {}
 
-local dsssaveManager = SaveManager.GetDeadSeaScrollsSave()
-
 function MenuProvider.SaveSaveData()
-    SaveManager.Save()
+    RestoredMonsterPack.SaveManager.Save()
 end
 
 function MenuProvider.GetPaletteSetting()
-	return dsssaveManager.MenuPalette
+	return RestoredMonsterPack:GetDSSData().MenuPalette
 end
 
 function MenuProvider.SavePaletteSetting(var)
-	dsssaveManager.MenuPalette = var
+	RestoredMonsterPack:GetDSSData().MenuPalette = var
 end
 
 function MenuProvider.GetHudOffsetSetting()
 	if not REPENTANCE then
-		return dsssaveManager.HudOffset
+		return RestoredMonsterPack:GetDSSData().HudOffset
 	else
 		return Options.HUDOffset * 10
 	end
@@ -30,56 +28,56 @@ end
 
 function MenuProvider.SaveHudOffsetSetting(var)
 	if not REPENTANCE then
-		dsssaveManager.HudOffset = var
+		RestoredMonsterPack:GetDSSData().HudOffset = var
 	end
 end
 
 function MenuProvider.GetGamepadToggleSetting()
-	return dsssaveManager.GamepadToggle
+	return RestoredMonsterPack:GetDSSData().GamepadToggle
 end
 
 function MenuProvider.SaveGamepadToggleSetting(var)
-	dsssaveManager.GamepadToggle = var
+	RestoredMonsterPack:GetDSSData().GamepadToggle = var
 end
 
 function MenuProvider.GetMenuKeybindSetting()
-	return dsssaveManager.MenuKeybind
+	return RestoredMonsterPack:GetDSSData().MenuKeybind
 end
 
 function MenuProvider.SaveMenuKeybindSetting(var)
-	dsssaveManager.MenuKeybind = var
+	RestoredMonsterPack:GetDSSData().MenuKeybind = var
 end
 
 function MenuProvider.GetMenuHintSetting()
-	return dsssaveManager.MenuHint
+	return RestoredMonsterPack:GetDSSData().MenuHint
 end
 
 function MenuProvider.SaveMenuHintSetting(var)
-	dsssaveManager.MenuHint = var
+	RestoredMonsterPack:GetDSSData().MenuHint = var
 end
 
 function MenuProvider.GetMenuBuzzerSetting()
-	return dsssaveManager.MenuBuzzer
+	return RestoredMonsterPack:GetDSSData().MenuBuzzer
 end
 
 function MenuProvider.SaveMenuBuzzerSetting(var)
-	dsssaveManager.MenuBuzzer = var
+	RestoredMonsterPack:GetDSSData().MenuBuzzer = var
 end
 
 function MenuProvider.GetMenusNotified()
-	return dsssaveManager.MenusNotified
+	return RestoredMonsterPack:GetDSSData().MenusNotified
 end
 
 function MenuProvider.SaveMenusNotified(var)
-	dsssaveManager.MenusNotified = var
+	RestoredMonsterPack:GetDSSData().MenusNotified = var
 end
 
 function MenuProvider.GetMenusPoppedUp()
-	return dsssaveManager.MenusPoppedUp
+	return RestoredMonsterPack:GetDSSData().MenusPoppedUp
 end
 
 function MenuProvider.SaveMenusPoppedUp(var)
-	dsssaveManager.MenusPoppedUp = var
+	RestoredMonsterPack:GetDSSData().MenusPoppedUp = var
 end
 
 local dssmenucore = include("scripts.deadseascrolls.dssmenucore")
@@ -119,10 +117,10 @@ local restoreddirectory = {
                         variable = "vesselType",
                         setting = 1,
                         load = function()
-                            return RestoredMonsterPack.DSSavedata.vesselType or 1
+                            return RestoredMonsterPack:GetDSSData().vesselType or 1
                         end,
                         store = function(var)
-                            RestoredMonsterPack.DSSavedata.vesselType = var
+                            RestoredMonsterPack:GetDSSData().vesselType = var
                         end,
                         tooltip = {strset = {'replaces', 'vessels with', 'their legacy', 'version','','disabled by', 'default'}}
         
