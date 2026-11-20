@@ -80,8 +80,10 @@ function MenuProvider.SaveMenusPoppedUp(var)
 	mod:GetDSSData().MenusPoppedUp = var
 end
 
-local dssmenucore = include("scripts.deadseascrolls.dssmenucore")
-local dssmod = dssmenucore.init(DSSModName, MenuProvider)
+local DSSInitializerFunction = include("scripts.deadseascrolls.dssmenucore")
+
+-- This function returns a table that some useful functions and defaults are stored on
+local dssmod = DSSInitializerFunction(DSSModName, DSSCoreVersion, MenuProvider)
 
 local restoreddirectory = {
 	main = {

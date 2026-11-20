@@ -217,7 +217,7 @@ function mod:confusionEffect(player, inputHook, buttonAction)
 		end
 	end
 end
-mod:AddCallback(ModCallbacks.MC_INPUT_ACTION, mod.confusionEffect)
+--mod:AddCallback(ModCallbacks.MC_INPUT_ACTION, mod.confusionEffect)
 
 local shaderPosition = Vector.Zero
 local lerpTarget = 0
